@@ -21,7 +21,7 @@ from simblin.helpers import normalize_tags, convert_markup, login_required, \
                             normalize
 
 
-admin = Blueprint(__name__)
+admin = Blueprint('amdin', __name__)
 
 
 @admin.route('/does-not-exist')

@@ -17,7 +17,7 @@ from simblin.extensions import db
 from simblin.models import Post, Tag, Category
 
 
-main = Blueprint(__name__)
+main = Blueprint('main', __name__)
 
 
 @main.route('/atom')
