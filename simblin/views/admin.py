@@ -11,7 +11,7 @@
 """
 import datetime
 
-from flask import Module, render_template, session, request, \
+from flask import Blueprint, render_template, session, request, \
                   flash, redirect, url_for, jsonify, abort
 
 from simblin import signals
@@ -21,7 +21,7 @@ from simblin.helpers import normalize_tags, convert_markup, login_required, \
                             normalize
 
 
-admin = Module(__name__)
+admin = Blueprint(__name__)
 
 
 @admin.route('/does-not-exist')

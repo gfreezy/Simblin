@@ -9,7 +9,7 @@
     :copyright: (c) 2010 by Eugen Kiss.
     :license: BSD, see LICENSE for more details.
 """
-from flask import Module, current_app, render_template, flash, redirect, \
+from flask import Blueprint, current_app, render_template, flash, redirect, \
                   url_for, abort, session, make_response
 from flaskext.sqlalchemy import Pagination
 
@@ -17,7 +17,7 @@ from simblin.extensions import db
 from simblin.models import Post, Tag, Category
 
 
-main = Module(__name__)
+main = Blueprint(__name__)
 
 
 @main.route('/atom')

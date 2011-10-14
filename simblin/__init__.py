@@ -35,7 +35,7 @@ def create_app(config=None):
         """Make the static helper function available inside the templates"""
         return dict(static=static)
         
-    app.register_module(admin)
-    app.register_module(main)
+    app.register_blueprint(admin)
+    app.register_blueprint(main)
     
     return app
