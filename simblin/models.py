@@ -24,9 +24,9 @@ class Admin(db.Model):
     __tablename__ = 'admin'
     
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(), unique=True)
-    email = db.Column(db.String(), unique=True)
-    pw_hash = db.Column(db.String(),)
+    username = db.Column(db.String(255), unique=True)
+    email = db.Column(db.String(255), unique=True)
+    pw_hash = db.Column(db.String(255),)
     
     def __init__(self, username, email, password):
         self.username = username
@@ -196,7 +196,7 @@ class Tag(db.Model):
     query_class = TagQuery
     
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(), unique=True, nullable=False)
+    name = db.Column(db.String(255), unique=True, nullable=False)
     
     @classmethod
     def get_or_create(cls, tag_name):
@@ -226,7 +226,7 @@ class Category(db.Model):
     __tablename__ = 'categories'
     
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(), unique=True, nullable=False)
+    name = db.Column(db.String(255), unique=True, nullable=False)
     
     def __init__(self, name):
         self.name = name
