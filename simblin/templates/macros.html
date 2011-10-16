@@ -48,17 +48,18 @@
   
   {% if post.comments_allowed and not is_preview %}
     <div style="margin-top: 5em"></div>
-    <div id="disqus_thread"></div>
+    <div id="uyan_frame"></div>
     <script type="text/javascript">
-      //var disqus_identifier = {{ post.id }}; 
-      (function() {
-       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-       dsq.src = 'http://{{ config["DISQUS_SHORTNAME"] }}.disqus.com/embed.js';
-       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.id = 'UYScript';
+      s.src = 'http://uyan.cc/js/iframe.js?UYUserId={{ config["UYAN_ID"] }}';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
       })();
     </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript={{ config['DISQUS_SHORTNAME'] }}">comments powered by Disqus.</a></noscript>
-    <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+    <noscript>Please enable JavaScript to view
+    the <a href="http://uyfan.cc/">comments powered by Uyfan.</a></noscript>
+    <a href="http://uyan.cc" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Uyfan</span></a>
   {% endif %}
   
 </div>
@@ -105,7 +106,7 @@
   
     {% if post.comments_allowed %}
     <div class="comments-link">
-      <a href="{{ url_for('main.show_post', slug=post.slug) }}#disqus_thread">Comments</a>
+      <a href="{{ url_for('main.show_post', slug=post.slug) }}#uyan_frame">Comments</a>
     </div>
     {% endif %}
   </div>
