@@ -41,7 +41,7 @@ def login_required(f):
 def normalize(string):
     """Unify string"""
     string = unicodedata.normalize("NFKD", unicode(string)).encode(
-        "ascii", "ignore")
+        "utf8", "ignore")
     string = re.sub(r"[^\w]+", " ", string)
     string = "-".join(string.lower().strip().split())
     return string

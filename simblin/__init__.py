@@ -3,7 +3,7 @@
     Simblin
     ~~~~~~~
 
-    Simblin - Simple Blog Engine. A blog engine written with Flask and 
+    Simblin - Simple Blog Engine. A blog engine written with Flask and
     Sqlalchemy.
 
     :copyright: (c) 2010 by Eugen Kiss.
