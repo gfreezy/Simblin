@@ -221,6 +221,6 @@ def register():
             db.session.commit()
             session['logged_in'] = True
             flash('You are the new master of this blog')
-            return redirect(url_for('create_post'))
+            return redirect(url_for('admin.create_post'))
     if error: flash(error, 'error')
     return render_template('admin/register.html')
